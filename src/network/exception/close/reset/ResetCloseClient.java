@@ -18,8 +18,9 @@ public class ResetCloseClient {
         Thread.sleep(1000); //서버가 close() 호출할 때 까지 잠시 대기
 
         // client -> server: PUSH[1]
-        output.write(1);
+        output.write(1); // 서버 소켓은 종료 됐으나 데이터를 전송하면?
 
+        // server는 client에 RST패킷은 전송한다.
         //client <- server: RST
         Thread.sleep(1000); // RST 메세지 전송 대기
         try{
