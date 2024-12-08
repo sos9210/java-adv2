@@ -63,7 +63,7 @@ public class HttpRequest {
     // Cache-Control: max-age=0
     private void parseHeaders(BufferedReader reader) throws IOException {
         String line;
-        while((line = reader.readLine()) != null) {
+        while(!(line = reader.readLine()).isEmpty()) {
             String[] headerParts = line.split(":");
             headers.put(headerParts[0].trim(), headerParts[1].trim());
         }

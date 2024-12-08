@@ -52,7 +52,7 @@ public class HttpRequestHandlerV4 implements Runnable{
                 site2(response);
             } else if(request.getPath().startsWith("/search")) {
                 search(request, response);
-            }else if(request.getPath().startsWith("/ ")) {
+            }else if(request.getPath().startsWith("/")) {
                 home(response);
             } else {
                 notFound(response);
